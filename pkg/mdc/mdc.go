@@ -10,7 +10,10 @@ func Context(ctx context.Context) context.Context {
 	if ctx == nil {
 		ctx = context.Background()
 	}
-	return context.WithValue(ctx, DiagnosticMap{}, make(map[string]interface{}))
+	return context.WithValue(
+		ctx,
+		DiagnosticMap{},
+		make(map[string]interface{}))
 }
 
 // Adds the diagnostic key/value pair to the context's DiagnosticMap and returns
